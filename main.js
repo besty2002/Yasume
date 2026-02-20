@@ -37,6 +37,20 @@ document.addEventListener('DOMContentLoaded', () => {
       // Update dashboard title based on button text
       const pageTitle = button.querySelector('span').textContent;
       document.querySelector('.topbar h2').textContent = pageTitle;
+
+      // Update description text based on page
+      const description = document.querySelector('.topbar p');
+      if (pageTitle === '대시보드') {
+        description.textContent = '잔여 연차 확인, 휴가 신청 및 승인 상태를 관리하세요.';
+      } else if (pageTitle === '휴가 신청') {
+        description.textContent = '원하는 날짜를 선택하여 휴가를 신청하세요.';
+      } else if (pageTitle === '팀 캘린더') {
+        description.textContent = '동료들의 휴가 일정을 확인하세요.';
+      } else if (pageTitle === '승인 관리') {
+        description.textContent = '팀원들의 휴가 신청을 검토하고 승인하세요.';
+      } else if (pageTitle === '설정') {
+        description.textContent = '개인 정보 및 알림 설정을 변경하세요.';
+      }
     });
   });
 });

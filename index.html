@@ -1,42 +1,42 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="ko" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LeaveFlow — Annual Leave Manager</title>
+  <title>LeaveFlow — 연차 관리 시스템</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app">
-    <!-- Sidebar -->
+    <!-- 사이드바 -->
     <aside class="sidebar">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
         <div>
-          <h1>LeaveFlow<br><small>Annual Leave Manager</small></h1>
+          <h1>LeaveFlow<br><small>연차 관리 시스템</small></h1>
         </div>
       </div>
 
-      <nav class="nav" aria-label="Main navigation">
+      <nav class="nav" aria-label="메인 네비게이션">
         <button class="active" type="button">
-          <span>Dashboard</span>
-          <span class="pill">Home</span>
+          <span>대시보드</span>
+          <span class="pill">홈</span>
         </button>
         <button type="button">
-          <span>Request Leave</span>
-          <span class="pill">Apply</span>
+          <span>휴가 신청</span>
+          <span class="pill">신청</span>
         </button>
         <button type="button">
-          <span>Team Calendar</span>
-          <span class="pill">View</span>
+          <span>팀 캘린더</span>
+          <span class="pill">보기</span>
         </button>
         <button type="button">
-          <span>Approvals</span>
-          <span class="pill">Admin</span>
+          <span>승인 관리</span>
+          <span class="pill">관리자</span>
         </button>
         <button type="button">
-          <span>Settings</span>
-          <span class="pill">Policy</span>
+          <span>설정</span>
+          <span class="pill">정책</span>
         </button>
       </nav>
 
@@ -46,215 +46,215 @@
       </div>
     </aside>
 
-    <!-- Main -->
+    <!-- 메인 콘텐츠 -->
     <main class="main">
-      <!-- Topbar -->
+      <!-- 상단바 -->
       <header class="topbar">
         <div class="title">
-          <h2>Dashboard</h2>
-          <p>Track balances, request time off, and manage approvals.</p>
+          <h2>대시보드</h2>
+          <p>잔여 연차 확인, 휴가 신청 및 승인 상태를 관리하세요.</p>
         </div>
 
         <div class="actions">
-          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+          <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="다크/라이트 모드 전환">
             <svg id="sun-icon" style="display:none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
             <svg id="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
           </button>
 
-          <div class="user" role="group" aria-label="User">
+          <div class="user" role="group" aria-label="사용자 정보">
             <div class="avatar" aria-hidden="true"></div>
             <div class="meta">
-              <strong>J. Kwang</strong>
-              <small>Employee</small>
+              <strong>광 제이</strong>
+              <small>임직원</small>
             </div>
           </div>
         </div>
       </header>
 
-      <!-- Metrics -->
-      <section class="cards" aria-label="Leave balances">
+      <!-- 주요 지표 -->
+      <section class="cards" aria-label="연차 잔여량">
         <div class="card metric">
-          <div class="label">Annual Leave Remaining</div>
-          <div class="value">10.0 days</div>
-          <div class="tag"><span class="dot good"></span> Updated today</div>
+          <div class="label">잔여 연차</div>
+          <div class="value">10.0일</div>
+          <div class="tag"><span class="dot good"></span> 오늘 업데이트됨</div>
         </div>
         <div class="card metric">
-          <div class="label">Used This Year</div>
-          <div class="value">4.0 days</div>
-          <div class="tag"><span class="dot"></span> FY 2026</div>
+          <div class="label">올해 사용 연차</div>
+          <div class="value">4.0일</div>
+          <div class="tag"><span class="dot"></span> 2026 회계연도</div>
         </div>
         <div class="card metric">
-          <div class="label">Pending Requests</div>
-          <div class="value">1</div>
-          <div class="tag"><span class="dot warn"></span> Waiting approval</div>
+          <div class="label">승인 대기 중</div>
+          <div class="value">1건</div>
+          <div class="tag"><span class="dot warn"></span> 승인 대기</div>
         </div>
         <div class="card metric">
-          <div class="label">Sick Leave Remaining</div>
-          <div class="value">5.0 days</div>
-          <div class="tag"><span class="dot"></span> Policy based</div>
+          <div class="label">잔여 병가</div>
+          <div class="value">5.0일</div>
+          <div class="tag"><span class="dot"></span> 정책 기준</div>
         </div>
       </section>
 
       <div class="grid">
-        <!-- Left: Request form + history -->
-        <section class="card" aria-label="Request leave form">
+        <!-- 왼쪽: 신청 폼 + 내역 -->
+        <section class="card" aria-label="휴가 신청 폼">
           <div class="section-title">
-            <h3>Request Time Off</h3>
-            <small>Submit a new request</small>
+            <h3>휴가 신청</h3>
+            <small>새로운 휴가를 신청하세요</small>
           </div>
 
-          <form onsubmit="event.preventDefault(); alert('UI mock: request submitted');">
+          <form onsubmit="event.preventDefault(); alert('UI 모형: 신청이 제출되었습니다');">
             <div class="row">
               <div>
-                <label for="type">Leave type</label>
+                <label for="type">휴가 종류</label>
                 <select id="type" required>
-                  <option>Annual Leave</option>
-                  <option>Sick Leave</option>
-                  <option>Half Day</option>
-                  <option>Unpaid Leave</option>
+                  <option>연차 휴가</option>
+                  <option>병가</option>
+                  <option>반차</option>
+                  <option>무급 휴가</option>
                 </select>
               </div>
               <div>
-                <label for="duration">Duration</label>
+                <label for="duration">기간 구분</label>
                 <select id="duration" required>
-                  <option>Full day</option>
-                  <option>AM (Half day)</option>
-                  <option>PM (Half day)</option>
-                  <option>Hourly</option>
+                  <option>종일</option>
+                  <option>오전 반차</option>
+                  <option>오후 반차</option>
+                  <option>시간 단위</option>
                 </select>
               </div>
             </div>
 
             <div class="row" style="margin-top:10px;">
               <div>
-                <label for="start">Start date</label>
+                <label for="start">시작일</label>
                 <input id="start" type="date" required />
               </div>
               <div>
-                <label for="end">End date</label>
+                <label for="end">종료일</label>
                 <input id="end" type="date" required />
               </div>
             </div>
 
             <div class="row" style="margin-top:10px;">
               <div>
-                <label for="approver">Approver</label>
+                <label for="approver">승인자</label>
                 <select id="approver" required>
-                  <option>Manager A</option>
-                  <option>Manager B</option>
-                  <option>HR Team</option>
+                  <option>매니저 A</option>
+                  <option>매니저 B</option>
+                  <option>HR 팀</option>
                 </select>
               </div>
               <div>
-                <label for="contact">Backup contact</label>
-                <input id="contact" type="text" placeholder="e.g., Kim / Slack @kim" />
+                <label for="contact">비상 연락처</label>
+                <input id="contact" type="text" placeholder="예: 김철수 / 슬랙 @kim" />
               </div>
             </div>
 
             <div style="margin-top:10px;">
-              <label for="note">Note (optional)</label>
-              <textarea id="note" placeholder="Add context for your manager..."></textarea>
-              <div class="help">Tip: mention coverage, deadlines, and handover notes.</div>
+              <label for="note">사유 (선택 사항)</label>
+              <textarea id="note" placeholder="매니저에게 전달할 내용을 입력하세요..."></textarea>
+              <div class="help">팁: 업무 대행자, 마감 기한, 인수인계 사항을 적어주세요.</div>
             </div>
 
             <div class="divider"></div>
 
             <div class="row">
-              <button class="btn" type="reset">Clear</button>
-              <button class="btn primary" type="submit">Submit request</button>
+              <button class="btn" type="reset">초기화</button>
+              <button class="btn primary" type="submit">신청서 제출</button>
             </div>
           </form>
 
           <div class="divider"></div>
 
           <div class="section-title">
-            <h3>Recent Requests</h3>
-            <small>Latest 3</small>
+            <h3>최근 신청 내역</h3>
+            <small>최근 3건</small>
           </div>
 
-          <table aria-label="Recent leave requests table">
+          <table aria-label="최근 휴가 신청 내역">
             <thead>
               <tr>
-                <th>Date</th>
-                <th>Type</th>
-                <th>Days</th>
-                <th>Status</th>
+                <th>날짜</th>
+                <th>종류</th>
+                <th>일수</th>
+                <th>상태</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>2026-02-25 ~ 2026-02-26</td>
-                <td>Annual Leave</td>
+                <td>연차 휴가</td>
                 <td>2.0</td>
-                <td><span class="status"><span class="dot warn"></span> Pending</span></td>
+                <td><span class="status"><span class="dot warn"></span> 대기 중</span></td>
               </tr>
               <tr>
                 <td>2026-01-12</td>
-                <td>Half Day</td>
+                <td>반차</td>
                 <td>0.5</td>
-                <td><span class="status"><span class="dot good"></span> Approved</span></td>
+                <td><span class="status"><span class="dot good"></span> 승인됨</span></td>
               </tr>
               <tr>
                 <td>2025-12-28</td>
-                <td>Sick Leave</td>
+                <td>병가</td>
                 <td>1.0</td>
-                <td><span class="status"><span class="dot good"></span> Approved</span></td>
+                <td><span class="status"><span class="dot good"></span> 승인됨</span></td>
               </tr>
             </tbody>
           </table>
         </section>
 
-        <!-- Right: Calendar + approvals -->
-        <aside class="card" aria-label="Team calendar and quick actions">
+        <!-- 오른쪽: 캘린더 + 빠른 작업 -->
+        <aside class="card" aria-label="팀 캘린더 및 빠른 작업">
           <div class="section-title">
-            <h3>Team Calendar</h3>
-            <small>Simple UI placeholder</small>
+            <h3>팀 캘린더</h3>
+            <small>UI 모형</small>
           </div>
 
-          <div class="calendar" aria-label="Calendar grid">
-            <div class="day"><strong>Mon</strong><div class="badge">2 off</div></div>
-            <div class="day"><strong>Tue</strong></div>
-            <div class="day"><strong>Wed</strong></div>
-            <div class="day"><strong>Thu</strong><div class="badge">1 off</div></div>
-            <div class="day"><strong>Fri</strong></div>
-            <div class="day"><strong>Sat</strong></div>
-            <div class="day"><strong>Sun</strong></div>
+          <div class="calendar" aria-label="캘린더 그리드">
+            <div class="day"><strong>월</strong><div class="badge">2명 부재</div></div>
+            <div class="day"><strong>화</strong></div>
+            <div class="day"><strong>수</strong></div>
+            <div class="day"><strong>목</strong><div class="badge">1명 부재</div></div>
+            <div class="day"><strong>금</strong></div>
+            <div class="day"><strong>토</strong></div>
+            <div class="day"><strong>일</strong></div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-title">
-            <h3>Manager Quick Actions</h3>
-            <small>Optional</small>
+            <h3>관리자 빠른 작업</h3>
+            <small>옵션</small>
           </div>
 
           <div class="card" style="padding:12px; background:var(--table-bg);">
             <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
               <div>
-                <div style="font-weight:700; font-size:13px;">Approval needed</div>
+                <div style="font-weight:700; font-size:13px;">승인 대기 건</div>
                 <div style="color:var(--muted); font-size:12px; margin-top:4px;">
-                  Annual leave request (2 days) from J. Kwang
+                  광 제이님의 연차 휴가 신청 (2일)
                 </div>
               </div>
-              <span class="status"><span class="dot warn"></span> Pending</span>
+              <span class="status"><span class="dot warn"></span> 대기 중</span>
             </div>
 
             <div class="row" style="margin-top:10px;">
-              <button class="btn" type="button" onclick="alert('UI mock: approved')">Approve</button>
-              <button class="btn" type="button" onclick="alert('UI mock: rejected')">Reject</button>
+              <button class="btn" type="button" onclick="alert('UI 모형: 승인되었습니다')">승인</button>
+              <button class="btn" type="button" onclick="alert('UI 모형: 반려되었습니다')">반려</button>
             </div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-title">
-            <h3>Company Policy</h3>
-            <small>UI-only</small>
+            <h3>사내 휴가 정책</h3>
+            <small>안내</small>
           </div>
           <div style="color:var(--muted); font-size:13px; line-height:1.6;">
-            • Annual leave accrues monthly<br>
-            • Carryover allowed up to 5 days<br>
-            • Approval required for 2+ consecutive days
+            • 연차는 매달 발생합니다<br>
+            • 최대 5일까지 이월 가능합니다<br>
+            • 2일 이상의 연속 휴가는 사전 승인이 필요합니다
           </div>
         </aside>
       </div>
