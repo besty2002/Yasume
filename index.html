@@ -1,14 +1,265 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LeaveFlow — Annual Leave Manager</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>LeaveFlow<br><small>Annual Leave Manager</small></h1>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <button class="active" type="button">
+          <span>Dashboard</span>
+          <span class="pill">Home</span>
+        </button>
+        <button type="button">
+          <span>Request Leave</span>
+          <span class="pill">Apply</span>
+        </button>
+        <button type="button">
+          <span>Team Calendar</span>
+          <span class="pill">View</span>
+        </button>
+        <button type="button">
+          <span>Approvals</span>
+          <span class="pill">Admin</span>
+        </button>
+        <button type="button">
+          <span>Settings</span>
+          <span class="pill">Policy</span>
+        </button>
+      </nav>
+
+      <div class="footer">
+        <div>© Your Company</div>
+        <div style="margin-top:6px;">v0.1 UI mock</div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="title">
+          <h2>Dashboard</h2>
+          <p>Track balances, request time off, and manage approvals.</p>
+        </div>
+
+        <div class="actions">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+            <svg id="sun-icon" style="display:none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg id="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <div class="user" role="group" aria-label="User">
+            <div class="avatar" aria-hidden="true"></div>
+            <div class="meta">
+              <strong>J. Kwang</strong>
+              <small>Employee</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Metrics -->
+      <section class="cards" aria-label="Leave balances">
+        <div class="card metric">
+          <div class="label">Annual Leave Remaining</div>
+          <div class="value">10.0 days</div>
+          <div class="tag"><span class="dot good"></span> Updated today</div>
+        </div>
+        <div class="card metric">
+          <div class="label">Used This Year</div>
+          <div class="value">4.0 days</div>
+          <div class="tag"><span class="dot"></span> FY 2026</div>
+        </div>
+        <div class="card metric">
+          <div class="label">Pending Requests</div>
+          <div class="value">1</div>
+          <div class="tag"><span class="dot warn"></span> Waiting approval</div>
+        </div>
+        <div class="card metric">
+          <div class="label">Sick Leave Remaining</div>
+          <div class="value">5.0 days</div>
+          <div class="tag"><span class="dot"></span> Policy based</div>
+        </div>
+      </section>
+
+      <div class="grid">
+        <!-- Left: Request form + history -->
+        <section class="card" aria-label="Request leave form">
+          <div class="section-title">
+            <h3>Request Time Off</h3>
+            <small>Submit a new request</small>
+          </div>
+
+          <form onsubmit="event.preventDefault(); alert('UI mock: request submitted');">
+            <div class="row">
+              <div>
+                <label for="type">Leave type</label>
+                <select id="type" required>
+                  <option>Annual Leave</option>
+                  <option>Sick Leave</option>
+                  <option>Half Day</option>
+                  <option>Unpaid Leave</option>
+                </select>
+              </div>
+              <div>
+                <label for="duration">Duration</label>
+                <select id="duration" required>
+                  <option>Full day</option>
+                  <option>AM (Half day)</option>
+                  <option>PM (Half day)</option>
+                  <option>Hourly</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row" style="margin-top:10px;">
+              <div>
+                <label for="start">Start date</label>
+                <input id="start" type="date" required />
+              </div>
+              <div>
+                <label for="end">End date</label>
+                <input id="end" type="date" required />
+              </div>
+            </div>
+
+            <div class="row" style="margin-top:10px;">
+              <div>
+                <label for="approver">Approver</label>
+                <select id="approver" required>
+                  <option>Manager A</option>
+                  <option>Manager B</option>
+                  <option>HR Team</option>
+                </select>
+              </div>
+              <div>
+                <label for="contact">Backup contact</label>
+                <input id="contact" type="text" placeholder="e.g., Kim / Slack @kim" />
+              </div>
+            </div>
+
+            <div style="margin-top:10px;">
+              <label for="note">Note (optional)</label>
+              <textarea id="note" placeholder="Add context for your manager..."></textarea>
+              <div class="help">Tip: mention coverage, deadlines, and handover notes.</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="row">
+              <button class="btn" type="reset">Clear</button>
+              <button class="btn primary" type="submit">Submit request</button>
+            </div>
+          </form>
+
+          <div class="divider"></div>
+
+          <div class="section-title">
+            <h3>Recent Requests</h3>
+            <small>Latest 3</small>
+          </div>
+
+          <table aria-label="Recent leave requests table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Days</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2026-02-25 ~ 2026-02-26</td>
+                <td>Annual Leave</td>
+                <td>2.0</td>
+                <td><span class="status"><span class="dot warn"></span> Pending</span></td>
+              </tr>
+              <tr>
+                <td>2026-01-12</td>
+                <td>Half Day</td>
+                <td>0.5</td>
+                <td><span class="status"><span class="dot good"></span> Approved</span></td>
+              </tr>
+              <tr>
+                <td>2025-12-28</td>
+                <td>Sick Leave</td>
+                <td>1.0</td>
+                <td><span class="status"><span class="dot good"></span> Approved</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Right: Calendar + approvals -->
+        <aside class="card" aria-label="Team calendar and quick actions">
+          <div class="section-title">
+            <h3>Team Calendar</h3>
+            <small>Simple UI placeholder</small>
+          </div>
+
+          <div class="calendar" aria-label="Calendar grid">
+            <div class="day"><strong>Mon</strong><div class="badge">2 off</div></div>
+            <div class="day"><strong>Tue</strong></div>
+            <div class="day"><strong>Wed</strong></div>
+            <div class="day"><strong>Thu</strong><div class="badge">1 off</div></div>
+            <div class="day"><strong>Fri</strong></div>
+            <div class="day"><strong>Sat</strong></div>
+            <div class="day"><strong>Sun</strong></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-title">
+            <h3>Manager Quick Actions</h3>
+            <small>Optional</small>
+          </div>
+
+          <div class="card" style="padding:12px; background:var(--table-bg);">
+            <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
+              <div>
+                <div style="font-weight:700; font-size:13px;">Approval needed</div>
+                <div style="color:var(--muted); font-size:12px; margin-top:4px;">
+                  Annual leave request (2 days) from J. Kwang
+                </div>
+              </div>
+              <span class="status"><span class="dot warn"></span> Pending</span>
+            </div>
+
+            <div class="row" style="margin-top:10px;">
+              <button class="btn" type="button" onclick="alert('UI mock: approved')">Approve</button>
+              <button class="btn" type="button" onclick="alert('UI mock: rejected')">Reject</button>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-title">
+            <h3>Company Policy</h3>
+            <small>UI-only</small>
+          </div>
+          <div style="color:var(--muted); font-size:13px; line-height:1.6;">
+            • Annual leave accrues monthly<br>
+            • Carryover allowed up to 5 days<br>
+            • Approval required for 2+ consecutive days
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <script src="main.js"></script>
 </body>
 </html>
